@@ -1,0 +1,5 @@
+---
+- name: R | Install (RedHat).
+  yum:
+    name: R
+    state: present

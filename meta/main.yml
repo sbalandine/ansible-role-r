@@ -1,0 +1,16 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: r
+  author: sbalandine
+  description: R for RHEL/CentOS.
+  company: "Epicentre"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - all
+  galaxy_tags:
+    - r

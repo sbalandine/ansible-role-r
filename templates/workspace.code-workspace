@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../../servers"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../ansible-role-r-studio"
+		},
+		{
+			"path": "../../ansible-role-r-shiny"
+		}
+	],
+	"remoteAuthority": "wsl+CentOS8",
+	"settings": {}
+}
