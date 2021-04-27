@@ -1,0 +1,5 @@
+# handlers file
+---
+- name: yum update cache
+  ansible.builtin.yum:
+    update_cache: yes

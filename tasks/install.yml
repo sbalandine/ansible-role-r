@@ -1,0 +1,103 @@
+# tasks file
+---
+- name: enable powertools
+  ini_file:
+    path: /etc/yum.repos.d/CentOS-Linux-PowerTools.repo
+    section: powertools
+    option: enabled
+    value: "1"
+    mode: "0644"
+  notify:
+    - yum update cache
+  when:
+    - ansible_distribution in [ "CentOS", "EL" ]
+    - ansible_distribution_major_version >= "8"
+
+- name: Install | Dependencies
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+     - blas-devel
+     - boost-devel
+    #  - bwidget
+    #  - bzip2-devel
+     - cairo-devel
+    #  - cyrus-sasl-devel
+    #  - czmq-devel
+    #  - fftw-devel
+    #  - file-devel
+     - freetype-devel #ragg
+     - fribidi-devel
+     - gdal       # rgdal
+     - gdal-devel # rgdal
+     - geos       # sf
+     - geos-devel # sf
+    #  - glpk-devel
+    #  - gnuplot
+    #  - gsl-devel
+    #  - gtk2-devel
+    #  - gtk3-devel
+     - harfbuzz-devel 
+    #  - hiredis-devel
+    #  - hunspell-devel
+    #  - ImageMagick
+    #  - ImageMagick-c++-devel
+    #  - jags4-devel
+    #  - java-1.8.0-openjdk-devel
+    #  - jq-devel
+    #  - lapack-devel
+     - libcurl-devel
+    #  - libdb-devel
+    #  - libicu-devel
+     - libjpeg-turbo-devel #ragg
+     - libpng-devel        #ragg
+    #  - libRmath-devel
+    #  - librsvg2-devel
+    #  - libsndfile-devel
+     - libsecret-devel     # keyring
+     - libsodium-devel     # keyring > sodium
+     - libtiff-devel       # ragg
+    #  - libwebp-devel
+    #  - libxml2-devel
+    #  - libXt-devel
+    #  - mariadb-devel
+    #  - mesa-libGLU-devel
+    #  - monitorix
+    #  - mpfr-devel
+    #  - mysql-devel
+    #  - netcdf
+    #  - netcdf-devel
+    #  - netcdf4-python
+    #  - numpy
+    #  - octave-devel
+    #  - openblas
+    #  - opencl-headers
+    #  - openmpi-devel
+    #  - openssl-devel
+    #  - poppler-cpp-devel
+    #  - poppler-glib-devel
+    #  - postgresql-devel
+     - proj-devel # rgdal
+    #  - proj-epsg
+    #  - protobuf-devel
+    #  - python-basemap
+    #  - python-matplotlib
+    #  - python-pandas
+    #  - qt-devel
+    #  - QuantLib-devel
+    #  - redland-devel
+     - sqlite-devel # sf
+    #  - tcl-devel
+    #  - tk-devel
+     - udunits2-devel # units
+    #  - unixODBC-devel
+    #  - v8-devel # v8
+    #  - wget
+    #  - xauth
+    #  - zlib-devel
+
+- name: Install | R
+  dnf:
+    name: R
+    state: present
