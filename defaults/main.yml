@@ -16,3 +16,6 @@ r_packages:
   - name: keyring
 r_dependencies: {}
 r_environment: {}
+os_environment:
+  - key: GITHUB_PAT
+    value: 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

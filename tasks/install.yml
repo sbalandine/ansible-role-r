@@ -45,7 +45,7 @@
     #  - ImageMagick-c++-devel
     #  - jags4-devel
     #  - java-1.8.0-openjdk-devel
-    #  - jq-devel
+     - jq-devel           # jqr
     #  - lapack-devel
      - libcurl-devel
     #  - libdb-devel
@@ -75,12 +75,12 @@
     #  - opencl-headers
     #  - openmpi-devel
     #  - openssl-devel
-    #  - poppler-cpp-devel
+     - poppler-cpp-devel    # pdftools
     #  - poppler-glib-devel
     #  - postgresql-devel
      - proj-devel # rgdal
     #  - proj-epsg
-    #  - protobuf-devel
+     - protobuf-devel       # protolite
     #  - python-basemap
     #  - python-matplotlib
     #  - python-pandas
@@ -101,3 +101,11 @@
   dnf:
     name: R
     state: present
+
+- name: Install | R | Populate /etc/environment
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    regexp: "^{{ item.key }}="
+    line:    "{{ item.key }}={{ item.value}}"
+  with_items: "{{ os_environment }}"
