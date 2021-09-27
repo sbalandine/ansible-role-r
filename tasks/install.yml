@@ -44,7 +44,7 @@
     # , ImageMagick-c++-devel
     # , jags4-devel
     # , java-1.8.0-openjdk-devel
-    , jq-devel           # jqr
+    # , jq-devel           # jqr
     # , lapack-devel
     , libcurl-devel
     # , libdb-devel
