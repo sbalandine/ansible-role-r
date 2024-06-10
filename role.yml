@@ -1,6 +1,0 @@
----
-# ansible-playbook role.yml --limit redcap
-- hosts: all
-  roles:
-  - role: ../ansible-role-r
-
