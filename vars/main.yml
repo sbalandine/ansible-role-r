@@ -1,12 +1,12 @@
 # vars file
 ---
 
-r_packages_from_github: "{{ r_packages | selectattr('type', 'defined') | selectattr('type', 'equalto', 'github') | map(attribute='name') | list | length > 0 }}"
+r_packages_from_github: '{{ r_packages | selectattr('type', 'defined') | selectattr('type', 'equalto', 'github') | map(attribute='name') | list | length > 0 }}'
 
 r_preset_package_remotes:
   - name: remotes
 
-r_packages_from_bioconductor: "{{ r_packages | selectattr('type', 'defined') | selectattr('type', 'equalto', 'bioconductor') | map(attribute='name') | list | length > 0 }}"
+r_packages_from_bioconductor: '{{ r_packages | selectattr('type', 'defined') | selectattr('type', 'equalto', 'bioconductor') | map(attribute='name') | list | length > 0 }}'
 
 r_preset_package_bioconductor:
   - name: BiocManager
@@ -15,7 +15,7 @@ r_dependencies_pre:
   - software-properties-common
   - dirmngr
   - apt-transport-https
-  
+
 r_dependencies:
   - r-base
-  - "{{ r_install_dev | ternary('r-base-dev', '') }}"
+  - '{{ r_install_dev | ternary('r-base-dev', '') }}'
