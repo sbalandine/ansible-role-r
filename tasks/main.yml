@@ -1,4 +1,4 @@
 # tasks file
 ---
-- include: install.yml
-- include: packages.yml
+- name: R | Install
+  ansible.builtin.import_tasks: r.install.yml

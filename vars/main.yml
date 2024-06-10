@@ -10,3 +10,12 @@ r_packages_from_bioconductor: "{{ r_packages | selectattr('type', 'defined') | s
 
 r_preset_package_bioconductor:
   - name: BiocManager
+
+r_dependencies_pre:
+  - software-properties-common
+  - dirmngr
+  - apt-transport-https
+  
+r_dependencies:
+  - r-base
+  - "{{ r_install_dev | ternary('r-base-dev', '') }}"

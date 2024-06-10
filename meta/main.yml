@@ -3,18 +3,15 @@ dependencies: []
 
 galaxy_info:
   namespace: epicentre
-  role_name: r
+  role_name: r_latest
   author: Serge Balandine
-  company: "Epicentre"
+  company: Epicentre
   description: R for RHEL/CentOS.
-  license: "license (BSD, MIT)"
-  min_ansible_version: 2.8.0
+  license: MIT
+  min_ansible_version: 2.10.0
   platforms:
-    - name: EL
+    - name: Ubuntu
       versions:
-        - 8
-  galaxy_tags:
-    - system
-    - r
-    - cran
-    - statistics
+        - bionic
+        - focal
+        - jammy
